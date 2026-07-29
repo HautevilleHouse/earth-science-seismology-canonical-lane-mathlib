@@ -1,0 +1,20 @@
+import canonicalLaneMathlib.AdmissibleClass
+import EarthScienceSeismologyCanonicalLaneLean.SeismicWavePropagation
+import EarthScienceSeismologyCanonicalLaneLean.EarthquakeSourceMechanism
+import EarthScienceSeismologyCanonicalLaneLean.SeismicTomography
+import EarthScienceSeismologyCanonicalLaneLean.AftershockSequence
+import EarthScienceSeismologyCanonicalLaneLean.SeismicHazardAssessment
+import EarthScienceSeismologyCanonicalLaneLean.SeismicInterferometry
+
+namespace HautevilleHouse
+namespace EarthScienceSeismologyCanonicalLaneLean
+
+def ConstrainedSeismologyClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_seismology_endgame (A : AdmissibleClass) :
+    ConstrainedSeismologyClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end EarthScienceSeismologyCanonicalLaneLean
+end HautevilleHouse
